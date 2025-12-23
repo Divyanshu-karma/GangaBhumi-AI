@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             // C. Send to Python Server
-            const response = await fetch("http://127.0.0.1:8000/ask", {
+            const response = await fetch("https://divya-nshu99-gangaai-backend.hf.space", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -73,4 +73,5 @@ document.addEventListener("DOMContentLoaded", () => {
     chatInput.addEventListener("keypress", (e) => {
         if (e.key === "Enter") sendMessage();
     });
+
 });
