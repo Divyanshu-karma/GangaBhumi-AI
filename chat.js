@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             // C. Send to Python Server
-            const response = await fetch("https://divya-nshu99-gangaai-backend.hf.space/ask", {
+            const response = await fetch("https://shivam-99x-trying.hf.space/ask", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
