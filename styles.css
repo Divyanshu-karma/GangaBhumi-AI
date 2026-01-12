@@ -212,10 +212,10 @@ body {
         display: none;
     }
 }
-/* ===============================
-   Mascot Container Styling
-   (inherits chatbox glow & radius)
-================================ */
+
+   /* Mascot Container Styling */
+   /* (inherits chatbox glow & radius) */
+
 
   .mascot-wrapper {
     top: 50%;
@@ -228,3 +228,4 @@ body {
     border-radius: inherit;
   }
        
+
