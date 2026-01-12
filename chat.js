@@ -3,13 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const sendButton = document.querySelector(".chat-input button");
     const chatHistory = document.getElementById("chatHistory");
 
-    // 1. Function to add message to UI
+    // fuction for message to ui
     function appendMessage(text, isUser = false) {
         const messageDiv = document.createElement("div");
         messageDiv.classList.add("message");
         messageDiv.classList.add(isUser ? "user" : "ai"); // Add 'user' or 'ai' class
         
-        // Add specific styling for user messages dynamically if not in CSS
+        //  styling for user messages dynamically if css not have
         if (isUser) {
             messageDiv.style.marginLeft = "auto";
             messageDiv.style.background = "rgba(255, 255, 255, 0.1)";
@@ -24,23 +24,23 @@ document.addEventListener("DOMContentLoaded", () => {
         chatHistory.scrollTop = chatHistory.scrollHeight;
     }
 
-    // 2. Function to talk to your Python Backend
+    //Function to talk to Python Backend
     async function sendMessage() {
         const query = chatInput.value.trim();
         if (!query) return;
 
-        // A. Show User Message
+        // A-Show User Message
         appendMessage(query, true);
         chatInput.value = ""; // Clear input
 
-        // B. Show "Thinking..." placeholder
+        // B-Show "Thinking..."
         const loadingDiv = document.createElement("div");
         loadingDiv.className = "message ai";
         loadingDiv.textContent = "Thinking...";
         chatHistory.appendChild(loadingDiv);
 
         try {
-            // C. Send to Python Server
+            // c Python Server connection
             const response = await fetch("https://shivam-99x-trying.hf.space/ask", {
                 method: "POST",
                 headers: {
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const data = await response.json();
 
-            // D. Remove "Thinking..." and show Real Answer
+            // D- put response
             chatHistory.removeChild(loadingDiv);
             
             if (data.answer) {
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // 3. Event Listeners
+    // 3 Event Listeners
     sendButton.addEventListener("click", sendMessage);
 
     chatInput.addEventListener("keypress", (e) => {
@@ -75,5 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
 
 
